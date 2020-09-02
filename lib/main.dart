@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:test_task/color_changer/color_changer.dart';
 import 'package:test_task/constants.dart';
 import 'package:test_task/middle_text/middle_text.dart';
+
+import 'middle_text/middle_text_model.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,18 +24,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: ColorChanger(
-          middleWidget: MiddleText(name: name),
-          setName: setName,
+    return ChangeNotifierProvider.value(
+        value: MiddleTextModel(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: ColorChanger(
+            middleWidget: MiddleText(name: name),
+          ),
         ));
-  }
-
-  void setName(String name){
-    setState(() {
-      print(name);
-      this.name = name;
-    });
   }
 }

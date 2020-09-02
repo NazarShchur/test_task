@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:test_task/middle_text/middle_text_model.dart';
 
 import '../constants.dart';
 
 class SettingsAlertDialog extends StatelessWidget {
   final textController = TextEditingController();
-
-  final Function setName;
-
-  SettingsAlertDialog({this.setName});
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<MiddleTextModel>(context);
     return AlertDialog(
       title: Text(Constants.settingsTittle),
       content: Column(
@@ -32,7 +31,7 @@ class SettingsAlertDialog extends StatelessWidget {
               ),
               ),
             onTap: (){
-              setName(textController.text);
+             model.setUsername(textController.text);
             },
             ),
         ],
