@@ -16,6 +16,7 @@ class SettingsAlertDialog extends StatelessWidget {
       content: Column(
         children: [
           TextField(
+            maxLength: Constants.maxUsernameLength,
             controller: textController,
           ),
           GestureDetector(

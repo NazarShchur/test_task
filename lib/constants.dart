@@ -13,4 +13,6 @@ abstract class Constants{
   static final double appBarHeight = 57.0;
 
   static final String CONFIRM = "Confirm";
+
+  static final int maxUsernameLength = 10;
 }
