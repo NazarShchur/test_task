@@ -5,4 +5,6 @@ abstract class Constants{
   static final String middleText = "Hey there";
   static final Color middleTextColor = Colors.black;
   static final double middleTextSize = 24.0;
+
+  static final String defaultUsername = "user";
 }

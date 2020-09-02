@@ -2,18 +2,20 @@ import 'package:flutter/cupertino.dart';
 
 import '../constants.dart';
 
-class MiddleText extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => _MiddleTextState();
-}
+class MiddleText extends StatelessWidget {
+  final String name;
+  final String message = Constants.middleText;
 
-class _MiddleTextState extends State<MiddleText> {
+  MiddleText({this.name});
+
   @override
   Widget build(BuildContext context) {
-    return Text(Constants.middleText,
+    return Text(
+        "$message, $name",
         style: TextStyle(
             color: Constants.middleTextColor,
             fontSize: Constants.middleTextSize
         ));
   }
 }
+
