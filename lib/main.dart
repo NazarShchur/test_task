@@ -25,11 +25,13 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         home: ColorChanger(
           middleWidget: MiddleText(name: name),
+          setName: setName,
         ));
   }
 
   void setName(String name){
     setState(() {
+      print(name);
       this.name = name;
     });
   }

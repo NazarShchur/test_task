@@ -4,8 +4,9 @@ import 'package:test_task/color_changer/random_color_generator.dart';
 
 class ColorChanger extends StatefulWidget {
   final Widget middleWidget;
+  final Function setName;
 
-  ColorChanger({this.middleWidget});
+  ColorChanger({this.middleWidget, this.setName});
 
   @override
   State<StatefulWidget> createState() => _ColorChangerState();
@@ -33,7 +34,7 @@ class _ColorChangerState extends State<ColorChanger> {
         });
       },
       child: Scaffold(
-          appBar: MyAppBar(),
+          appBar: MyAppBar(setName: widget.setName),
           backgroundColor: backgroundColor,
           body: Center(
             child: widget.middleWidget,
