@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_task/app_bar/my_app_bar.dart';
 import 'package:test_task/color_changer/random_color_generator.dart';
 
 class ColorChanger extends StatefulWidget {
@@ -32,6 +33,7 @@ class _ColorChangerState extends State<ColorChanger> {
         });
       },
       child: Scaffold(
+          appBar: MyAppBar(),
           backgroundColor: backgroundColor,
           body: Center(
             child: widget.middleWidget,
